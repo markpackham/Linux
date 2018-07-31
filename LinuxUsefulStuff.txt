@@ -1,0 +1,8 @@
+Find amount of disk space
+df -h
+
+Find performance info
+top
+
+Show list of files by modified date
+ll -t
