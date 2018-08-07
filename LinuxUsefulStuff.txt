@@ -6,3 +6,7 @@ top
 
 Show list of files by modified date
 ll -t
+
+
+Running a php script in Current Path in bash
+sudo php $PWD/aPHPfile.php
