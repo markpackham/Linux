@@ -10,3 +10,21 @@ ll -t
 
 Running a php script in Current Path in bash
 sudo php $PWD/aPHPfile.php
+
+
+Cause your script to sleep
+
+0.5 seconds:
+sleep .5
+
+5 seconds
+sleep 5
+
+5 minutes
+sleep 5m
+
+5 hours
+sleep 5h
+
+5 days
+sleep 5d
