@@ -34,3 +34,16 @@ Print the MD5 or SHA Checksums
 md5sum theFile
 shasum theFile
 
+
+Check if files have had their hashes changed via md5sum and test, we write all the data into a "test" file
+md5sum file1 file2 file3 > test
+md5sum --check test
+file1: OK
+file2: OK
+file3: OK
+echo "I have been changed" >> file1
+md5sum --check test
+file1: FAILED
+file2: OK
+file3: OK
+md5sum: WARNING: 1 computed checksum did NOT match
