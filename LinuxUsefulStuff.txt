@@ -28,3 +28,9 @@ sleep 5h
 
 5 days
 sleep 5d
+
+
+Print the MD5 or SHA Checksums
+md5sum theFile
+shasum theFile
+
