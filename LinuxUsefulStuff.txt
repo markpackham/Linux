@@ -47,3 +47,8 @@ file1: FAILED
 file2: OK
 file3: OK
 md5sum: WARNING: 1 computed checksum did NOT match
+
+
+Install exif then get exif info for images
+sudo apt install libimage-exiftool-perl
+exiftool aFile
