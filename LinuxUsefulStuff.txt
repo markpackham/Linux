@@ -4,6 +4,17 @@ df -h
 Find performance info
 top
 
+*********
+See what's going on during a mysql database import in Linux
+ps -ef | grep mysql
+
+trace my instance
+sudo strace -p 24060
+
+see what's going on in MySQL (like top but MySQL focused)
+mytop
+*********
+
 Show list of files by modified date
 ll -t
 
