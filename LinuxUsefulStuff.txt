@@ -4,6 +4,9 @@ df -h
 Find performance info
 top
 
+List all the files in a directory/folder in one column
+ls -1 theDirectory
+
 *********
 See what's going on during a mysql database import in Linux
 ps -ef | grep mysql
