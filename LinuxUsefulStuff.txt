@@ -7,6 +7,9 @@ top
 List all the files in a directory/folder in one column
 ls -1 theDirectory
 
+Sort files by size in a human readable format
+ls -lhS
+
 *********
 See what's going on during a mysql database import in Linux
 ps -ef | grep mysql
@@ -66,3 +69,4 @@ md5sum: WARNING: 1 computed checksum did NOT match
 Install exif then get exif info for images
 sudo apt install libimage-exiftool-perl
 exiftool aFile
+
