@@ -7,6 +7,10 @@ top
 List all the files in a directory/folder in one column
 ls -1 theDirectory
 
+See symbolic links
+ls -l
+symlinkToMyWebsite.com -> myWebsite.com
+
 Sort files by size in a human readable format
 ls -lhS
 
