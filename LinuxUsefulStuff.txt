@@ -74,3 +74,31 @@ Install exif then get exif info for images
 sudo apt install libimage-exiftool-perl
 exiftool aFile
 
+
+Show which kernel of linux you are using then show previous versions
+
+mark@mark-Latitude-E5550 ~ $ uname -r
+4.15.0-33-generic
+mark@mark-Latitude-E5550 ~ $ dpkg -l linux-{image,headers}-"[0-9]*" | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut -f1,2 -d"-"` | grep -e '[0-9]'
+linux-headers-4.10.0-38
+linux-headers-4.10.0-38-generic
+linux-headers-4.13.0-45
+linux-headers-4.13.0-45-generic
+linux-headers-4.15.0-24
+linux-headers-4.15.0-24-generic
+linux-headers-4.15.0-29
+linux-headers-4.15.0-29-generic
+linux-headers-4.15.0-30
+linux-headers-4.15.0-30-generic
+linux-headers-4.15.0-32
+linux-headers-4.15.0-32-generic
+linux-image-4.10.0-38-generic
+linux-image-4.13.0-45-generic
+linux-image-4.15.0-24-generic
+linux-image-4.15.0-29-generic
+linux-image-4.15.0-30-generic
+linux-image-4.15.0-32-generic
+
+Remove a kernel
+sudo apt-get purge linux-image-4.15.0-30-generic -y
+
