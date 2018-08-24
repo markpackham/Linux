@@ -4,8 +4,14 @@ df -h
 Find performance info
 top
 
-List all the files in a directory/folder in one column
+List all the files in a directory/folder in one column (ll is an alias for ls -l)
 ls -1 theDirectory
+
+Show list of files by modified date
+ll -t
+
+Recursively look through directories listing items
+ll -R
 
 See symbolic links
 ls -l
@@ -24,10 +30,6 @@ sudo strace -p 24060
 see what's going on in MySQL (like top but MySQL focused)
 mytop
 *********
-
-Show list of files by modified date
-ll -t
-
 
 Running a php script in Current Path in bash
 sudo php $PWD/aPHPfile.php
