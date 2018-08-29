@@ -13,6 +13,9 @@ ll -t
 Recursively look through directories listing items
 ll -R
 
+Hexdump a word with characters that you can't understand eg �
+ll wordWithStrangeCharacters* | hexdump -C
+
 See symbolic links
 ls -l
 symlinkToMyWebsite.com -> myWebsite.com
@@ -104,3 +107,16 @@ linux-image-4.15.0-32-generic
 Remove a kernel
 sudo apt-get purge linux-image-4.15.0-30-generic -y
 
+
+Find a file by name, but ignore the case just add an "i" to -name
+find -iname "myFile"
+
+
+Find file recursivley (careful this may take forever if there are many layers of directories"
+find . -name '*theFileEnd'
+find . -name 'theFileStart*'
+
+
+"locate" is faster than "find" but you must make sure the database used is up to date
+sudo updatedb
+locate myFile
