@@ -134,3 +134,7 @@ lsTest.txt
 new 1.txt
 strangeFiles
 time.txt
+
+
+Show all files in the current directory & their type
+file *
