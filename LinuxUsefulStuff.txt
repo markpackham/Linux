@@ -120,3 +120,17 @@ find . -name 'theFileStart*'
 "locate" is faster than "find" but you must make sure the database used is up to date
 sudo updatedb
 locate myFile
+
+
+Putting a command into a file using ">" then reading it via "more"
+mark@mark-Latitude-E5550 ~/Downloads $ ls > lsTest.txt
+mark@mark-Latitude-E5550 ~/Downloads $ more lsTest.txt 
+someFolder.zip
+Bad PLUS character.csv
+CopyrightLogoFile©
+CopyrightLogoFile©.png
+�.eps
+lsTest.txt
+new 1.txt
+strangeFiles
+time.txt
