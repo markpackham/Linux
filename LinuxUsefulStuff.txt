@@ -1,3 +1,6 @@
+Autocomplete of a past command at you typed (handy if you typed some very long commands)
+Ctrl + r [start typing]
+
 Find amount of disk space
 df -h
 
