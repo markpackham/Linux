@@ -7,6 +7,9 @@ df -h
 Find performance info
 top
 
+Show file size
+ls -s theFile
+
 List all the files in a directory/folder in one column (ll is an alias for ls -l)
 ls -1 theDirectory
 
