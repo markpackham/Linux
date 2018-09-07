@@ -144,3 +144,6 @@ time.txt
 
 Show all files in the current directory & their type
 file *
+
+Hexdump a file, handy to figure out what weird characters, � marked as null in unicode are
+myFile.doc | hexdump -C
