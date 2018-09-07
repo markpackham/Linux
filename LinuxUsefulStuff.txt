@@ -141,9 +141,26 @@ new 1.txt
 strangeFiles
 time.txt
 
+zip
+tar -zcvf zipFolder.tar.gz zipFolder/ 
+
+unzip
+tar -zxvf zipFolder.tar.gz 
+
 
 Show all files in the current directory & their type
 file *
 
 Hexdump a file, handy to figure out what weird characters, � marked as null in unicode are
 myFile.doc | hexdump -C
+
+
+Get external ip of server
+nslookup www.myWebsite.com
+
+
+grab files via sftp
+sftp www.grabSite.com
+cd /whereTheFileLives/
+get grabMeFile.tar.gz
+exit
