@@ -251,3 +251,195 @@ env returns a list of environment variables.
 
 
 *****Bash Scripting*******
+
+
+Bash File example script.sh
+#!/bin/bash
+echo "Hello Codecademy!"
+
+Make file ready to run (executable)
+chmod +x script.sh
+./script.sh 
+
+
+Declare & print variable (NO SPACES when it comes to the "=")
+#!/bin/bash
+phrase="Hello to you!"
+echo $phrase
+
+******Bash Conditionals******
+When bash scripting, you can use conditionals to control which set of commands within the script run. Use if to start the conditional, followed by the condition in square brackets ([ ]). then begins the code that will run if the condition is met. else begins the code that will run if the condition is not met. Lastly, the conditional is closed with a backwards if, fi.
+A complete conditional in a bash script uses the following syntax:
+if [ $index -lt 5 ]
+then
+  echo $index
+else
+  echo 5
+fi
+Bash scripts use a specific list of operators for comparison. Here we used -lt which is “less than”. The result of this conditional is that if $index is less than 5, it will print to the screen. If it is 5 or greater, “5” will be printed to the screen.
+
+Here is the list of comparison operators for numbers you can use within bash scripts:
+Equal: -eq
+Not equal: -ne
+Less than or equal: -le
+Less than: -lt
+Greater than or equal: -ge
+Greater than: -gt
+Is null: -z
+When comparing strings, it is best practice to put the variable into quotes ("). This prevents errors if the variable is null or contains spaces. The common operators for comparing strings are:
+Equal: ==
+Not equal: !=
+For example, to compare if the variables foo and bar contain the same string:
+if [ "$foo" == "$bar"]
+
+
+If this variable is less than 1, we want to use first_greeting. Otherwise, we want to use later_greeting.
+#!/bin/bash
+first_greeting="Nice to meet you!"
+later_greeting="How are you?"
+greeting_occasion=1
+if [ $greeting_occasion -lt 1 ]
+then 
+	echo $first_greeting
+else
+	echo $later_greeting
+fi
+
+**** Bash loops ***
+for word in $paragraph
+do
+  echo $word
+done
+Note that word is being “defined” at the top of the for loop so there is no $ prepended. 
+Remember that we prepend the $ when accessing the value of the variable. 
+So, when accessing the variable within the do block, we use $word as usual.
+
+
+Within bash scripting until and while are very similar. while loops keep looping while the provided condition is true 
+whereas until loops loop until the condition is true. Conditions are established the same way as they are within an if block, 
+between square brackets. If we want to print the index variable as long as it is less than 5, we would use the following while loop:
+
+while [ $index -lt 5 ]
+do
+  echo $index
+  index=$((index + 1))
+done
+Note that arithmetic in bash scripting uses the $((...)) syntax and within the brackets the variable name is not 
+prepended with a $.
+
+The same loop could also be written as an until loop as follows:
+
+until [ $index -eq 5 ]
+do
+  echo $index
+  index=$((index + 1))
+done
+
+
+
+#!/bin/bash
+first_greeting="Nice to meet you!"
+later_greeting="How are you?"
+greeting_occasion=0
+while [ $greeting_occasion -lt 3 ]
+do
+  if [ $greeting_occasion -lt 1 ]
+  then
+    echo $first_greeting
+  else
+    echo $later_greeting
+  fi
+  greeting_occasion=$((greeting_occasion + 1))
+done
+
+
+****Bash inputs***
+
+read is used to take input
+echo "Guess a number"
+read number
+echo "You guessed $number"
+
+
+Another way to access external data is to have the user add input arguments when they run your script. 
+These arguments are entered after the script name and are separated by spaces. For example:
+
+saycolors red green blue
+Within the script, these are accessed using $1, $2, etc, where $1 is the first argument (here, “red”) and so on. 
+Note that these are 1 indexed.
+
+If your script needs to accept an indefinite number of input arguments, you can iterate over them using the "$@" syntax. 
+For our saycolors example, we could print each color using:
+
+for color in "$@"
+do
+  echo $color
+done
+Lastly, we can access external files to our script. You can assign a set of files to a variable name using standard 
+bash pattern matching using regular expressions. For example, to get all files in a directory, you can use the * character:
+
+files=/some/directory/*
+You can then iterate through each file and do something. Here, lets just print the full path and filename:
+
+for file in $files
+do
+  echo $file
+done
+
+
+Ask user how many times you wish to greet them
+#!/bin/bash
+first_greeting="Nice to meet you!"
+later_greeting="How are you?"
+greeting_occasion=0
+
+echo "How many times should I greet?"
+read greeting_limit
+while [ $greeting_occasion -lt $greeting_limit ]
+do
+  if [ $greeting_occasion -lt 1 ]
+  then
+    echo $first_greeting
+  else
+    echo $later_greeting
+  fi
+  greeting_occasion=$((greeting_occasion + 1))
+done
+
+
+For the script below to run you need to provide an argument so "./script.sh 2" so it runs twice
+#!/bin/bash
+first_greeting="Nice to meet you!"
+later_greeting="How are you?"
+greeting_occasion=0
+greeting_limit=$1
+while [ $greeting_occasion -lt $greeting_limit ]
+do
+  if [ $greeting_occasion -lt 1 ]
+  then
+    echo $first_greeting
+  else
+    echo $later_greeting
+  fi
+  greeting_occasion=$((greeting_occasion + 1))
+done
+
+
+
+Any command that can be run in the terminal can be run in a bash script.
+Variables are assigned using an equals sign with no space (greeting="hello").
+Variables are accessed using a dollar sign (echo $greeting).
+Conditionals use if, then, else, fi syntax.
+Three types of loops can be used: for, while, and until.
+Bash scripts use a unique set of comparison operators:
+Equal: -eq
+Not equal: -ne
+Less than or equal: -le
+Less than: -lt
+Greater than or equal: -ge
+Greater than: -gt
+Is null: -z
+Input arguments can be passed to a bash script after the script name, separated by spaces (myScript.sh “hello” “how are you”).
+Input can be requested from the script user with the read keyword.
+Aliases can be created in the .bashrc or .bash_profile using the alias keyword.
+
